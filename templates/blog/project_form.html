@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Add Project{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card p-4 mx-auto" style="max-width:720px;">
+    <h3>Add New Project</h3>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="btn btn-primary mt-2" type="submit">Save Project</button>
+      <a href="{% url 'projects_list' %}" class="btn btn-link mt-2">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

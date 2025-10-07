@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}   {# add this line #}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-lg p-4" style="width: 450px;">
+    <h2 class="text-center mb-4">Create Your Account</h2>
+
+    <form method="post">
+      {% csrf_token %}
+       {{ form|crispy }}   {# crispy will handle the rendering #}
+
+      <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+
+    <p class="text-center mt-3">
+      Already have an account? <a href="{% url 'login' %}">Login</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

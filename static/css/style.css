@@ -1,0 +1,293 @@
+/* General styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: grey;
+}
+
+header {
+    background: #0a3bdd;
+    color: gray;
+    padding: 0.15rem;
+    text-align: left;
+}
+
+/* Fix nav links */
+nav a {
+  color: #fff;
+  margin: 2px 10px;
+  text-decoration: none;
+}
+
+form .nav-link {
+  padding: 0.5rem 1rem; 
+  color: #fff !important;
+  text-decoration: none;
+}
+form .nav-link:hover {
+  color: #ddd !important;
+}
+
+.dropdown-menu {
+  background-color: #343a40; 
+}
+.dropdown-item {
+  color: #f8f9fa; 
+}
+.dropdown-item:hover {
+  background-color: #495057; 
+  color: #fff;
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #fff !important;      /* same as navbar links */
+    font-size: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-link:hover {
+    color: #ddd !important;      /* hover effect like other links */
+}
+
+
+/* Hero Section */
+.hero {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;   /* center all content */
+}
+
+.hero-content {
+    display: block;       /* remove side-by-side flex */
+}
+
+.hero-text {
+    margin-top: 1rem;
+}
+
+.hero-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+}
+
+/* CTA button */
+.btn-cta {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-cta:hover {
+    background: #0056b3;
+}
+
+/* Section styles */
+section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    border-bottom: 2px solid #343a40;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Project Cards */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 250px;
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #343a40;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Blog List */
+.blog ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blog li {
+    margin-bottom: 1rem;
+}
+
+.blog a {
+    font-weight: bold;
+    color: #343a40;
+    text-decoration: none;
+}
+
+.blog a:hover {
+    text-decoration: underline;
+}
+
+/* Blog Cards */
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.blog-card {
+    background: white;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.blog-card h3 {
+    margin-top: 0;
+}
+
+.blog-card a {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
+
+/* Read more button */
+.btn-read {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    background: #007bff;
+    color: white !important;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-read:hover {
+    background: #0056b3;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+.contact a {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.contact a:hover {
+    background: #0056b3;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-container button {
+    background: #007bff;
+    color: white;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+/* Register Page */
+.register-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-register {
+    background: #28a745;
+    color: white;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    background: #1e7e34;
+}

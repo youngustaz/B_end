@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Testimonials{% endblock %}
+
+{% block content %}
+<h1>What People Say About Me</h1>
+
+<form method="post" class="mb-4">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h3>Recent Testimonials</h3>
+<ul class="list-group">
+  {% for t in testimonials %}
+    <li class="list-group-item">
+      <strong>{{ t.name }}</strong>
+      <small class="text-muted">{{ t.created_at|date:"M d, Y" }}</small>
+      <p>{{ t.message }}</p>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No testimonials yet. Be the first!</li>
+  {% endfor %}
+</ul>
+{% endblock %}
