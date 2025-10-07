@@ -1,6 +1,8 @@
 from decouple import config
 import os
 from pathlib import Path
+import dj_database_url
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-secret-key')
@@ -48,16 +50,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog_portfolio.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': config('DB_NAME'),               
-        'USER': config('DB_USER'),          
-        'PASSWORD': config('DB_PASSWORD'),      
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='3306')                     
+if os.environ.get("RENDER"):  # When running on Render
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get("DATABASE_URL")
+        )
     }
-}
+else:  # Local development (MySQL)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST', default='localhost'),
+            'PORT': config('DB_PORT', default='3306'),
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = []
 
